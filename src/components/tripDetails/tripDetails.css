@@ -1,0 +1,172 @@
+.trip-details-container {
+  background: var(--color-card);
+  border-radius: 1rem;
+  overflow: hidden;
+  margin: 20px 0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.trip-details-container:hover {
+  transform: translateY(-5px);
+}
+
+.trip-header {
+  position: relative;
+  height: 450px;
+  overflow: hidden;
+}
+
+.trip-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.trip-header:hover img {
+  transform: scale(1.05);
+}
+
+.trip-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+}
+
+.trip-title h1 {
+  color: white;
+  margin: 0;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.trip-title:hover h1 {
+  transform: translateY(-5px);
+}
+
+.trip-content {
+  padding: 2rem;
+}
+
+.trip-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: var(--color-bg);
+  padding: 1.8rem;
+  border-radius: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-primary);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h3 {
+  color: var(--color-primary);
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.stat-card p {
+  color: var(--text-color);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.trip-description {
+  background: var(--color-bg);
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.trip-description:hover {
+  transform: translateX(10px);
+}
+
+.trip-description h2 {
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.trip-description p {
+  line-height: 1.8;
+  color: var(--text-color);
+  font-size: 1.1rem;
+}
+
+.trip-itinerary {
+  background: var(--color-bg);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  margin-top: 2rem;
+}
+
+.itinerary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.itinerary-day {
+  background: var(--color-card);
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  border-left: 4px solid var(--color-primary);
+}
+
+.itinerary-day:hover {
+  transform: translateX(15px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .trip-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .trip-header {
+    height: 300px;
+  }
+  
+  .trip-title h1 {
+    font-size: 2rem;
+  }
+  
+  .trip-content {
+    padding: 1.5rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.trip-details-container {
+  animation: fadeIn 0.5s ease-out;
+} 
