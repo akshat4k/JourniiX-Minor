@@ -1,4 +1,3 @@
-
 import feedProfile1 from '../assets/img/FeedProfile1.jpg';
 import feedProfile2 from '../assets/img/FeedProfile2.jpg';
 import feedProfile3 from '../assets/img/FeedProfile3.jpg';
@@ -119,5 +118,15 @@ const Feeds =[
     },
 ];
 
+export const generateMorePosts = (startIndex, count) => {
+  return Array(count).fill(null).map((_, index) => ({
+    id: startIndex + index,
+    userid: startIndex + index,
+    name: `User ${startIndex + index}`,
+    feedImage: [FeedImage1, FeedImage2, FeedImage3, FeedImage4, FeedImage5][Math.floor(Math.random() * 5)],
+    feedProfile: [feedProfile1, feedProfile2, feedProfile3, feedProfile4, feedProfile5][Math.floor(Math.random() * 5)],
+    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, distinctio'
+  }));
+};
 
 export default Feeds;
